@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #d7e7ff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.flip-card{
+    position: relative;
+    width: 500px;
+    aspect-ratio: 16/9;
+    perspective: 3200px;
+    /* perspective means the camera is 3200px away from the element */
+}
+
+.flip-card-front, .flip-card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 4px 12px 40px 6px rgba(0, 0, 0, 0.09);
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* adding transition effect to see that effect */
+    transition: transform 1s ease-in-out;
+
+    /* remove the backface default */
+    backface-visibility: hidden;
+}
+
+.flip-card-front{
+    /* to see the rotate changing perspective on the parent element */
+    transform: rotateX(0deg);
+    background: whitesmoke;
+    color: grey;
+}
+
+.flip-card-back{
+    transform: rotateX(-180deg);
+    background: hsl(215.9, 20%, 50%);
+    color: hsl(215, 30%, 80%);
+}
+
+/* the transforms are 0 and -180 deg because they need to be opposite to make the flipping animation work */
+/* to show flipping we should change the value congecutively */
+.flip-card:hover .flip-card-front{
+    transform: rotateX(180deg);
+}
+
+.flip-card:hover .flip-card-back{
+    transform: rotateX(0deg);
+}
