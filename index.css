@@ -1,9 +1,30 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: white;
-    color: black;
+.flip-card{
+    position: relative;
+    width: 500px;
+    aspect-ratio: 16/9;
+    perspective: 3200px;
 }
 
+.flip-card-front, .flip-card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    font-size: 40px;
+    transition: transform 1s ease-in-out;
+    backface-visibility: hidden;
+}
+
+.flip-card-front{
+    transform: rotateX(0deg);
+    background: rgb(253, 78, 78);
+    border: 1px solid grey;
+    box-shadow: 4px 12px 40px 6px rgba(0, 0, 0, 0.09);
+}
+
+.flip-card-back{
+    transform: rotateX(-180deg);
+    box-shadow: 4px 12px 40px 6px rgba(0, 0, 0, 0.09);
+    background: hsl(137, 86%, 52%);
+}
 
