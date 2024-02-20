@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Co-Graph</title>
 
-    <link rel="stylesheet" href="flip.css">
+    <!-- style -->
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="img/icons8-combo-chart-16.png" type="image/png">
 
+    <!-- loading plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
     <!-- fonts from google fonts named kode mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,17 +21,54 @@
 
 <body>
     <header>
-        <nav></nav>
+        <nav>
+            <span>Home</span><span>Modes</span><span>Chatbot</span>
+            <p></p>
+            <span id="score">Total Score: 00</span>
+        </nav>
     </header>
+    
     <main>
-        <div class="flip-card" id="graphs">
-            <div id="problem" class="flip-card-front">problem</div>
-            <div id="usr_solution" class="flip-card-back">User's Solution</div>
+        <div class="container">
+            <div class="wrapper">
+                <div class="box">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="flip-card" id="graphs">
+                <div id="problem" class="flip-card-front">
+                    <!-- graph is auto generated -->
+                    <div id="graph"></div>
+                </div>
+                <div id="usr_solution" class="flip-card-back">
+                    <div id="graph2">
+                    <label for="input"></label>
+                    <input id="input-equation" type="text" required placeholder="y = mx + c">
+                    <button for="submit" id="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
+    <footer>
+        <div class="link">->birajtwr12@gmail.com</div>
+        <div class="link">->Facebook</div>
+        <p>&copy;Biraj Tiwari 2024</p>
+        <div class="link">->Chat & Enquiries</div>
+        <div class="link">->Contact No.</div>
+    </footer>
 
-
+    <!-- locale script -->
     <script src="index.js"></script>
 </body>
 
